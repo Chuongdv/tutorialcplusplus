@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+struct SWITCH{
+    unsigned char id; 
+    unsigned char status; // present on/off
+};
+
+struct SWITCH2{
+    unsigned char id : 7; // assume that id < 127
+    unsigned char status : 1;
+};
+
+int main()
+{
+    cout << sizeof(SWITCH) << endl << sizeof(SWITCH2);
+    
+    return 0;
+}

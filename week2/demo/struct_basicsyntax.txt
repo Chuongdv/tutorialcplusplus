@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct user{
+  string name;
+  int age;
+};
+
+int main()
+{
+    //initialization
+    user chuong{"chuong", 21};
+    
+    //assigment
+    user cong = chuong;
+    
+    //access
+    cout << "name of chuong: " << chuong.name << endl << "age of chuong: " << chuong.age << endl;
+    
+    // pointer
+    user* p = &chuong;
+    cout << "name of chuong: " << p->name << endl << "age of chuong: " << p->age << endl;
+
+    return 0;
+}

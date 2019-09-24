@@ -1,0 +1,43 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct vehicle{
+    
+    string color;
+    vehicle(string color)
+    {
+        this->color = color;
+    }
+    virtual void display(){
+        cout << "vehicle has color  " <<  color << endl;
+    }
+};
+
+struct motor: vehicle{
+    string model;
+    motor(string model, string color): vehicle(color)
+    {
+        this->model = model;
+    }
+    
+    void display(){
+        cout << "motor has model "<< model << " " << "has color " << vehicle::color << endl; 
+    }
+};
+
+int main()
+{
+    vehicle *p = new motor("vn", "pink");
+    p->display();
+    return 0;
+}
